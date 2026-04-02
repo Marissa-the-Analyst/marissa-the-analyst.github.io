@@ -35,3 +35,13 @@ Credits:
 		jQuery (jquery.com)
 		Scrollex (github.com/ajlkn/jquery.scrollex)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
+
+--- 
+Credits for Project Images:
+Pexels (https://www.pexels.com/) <br>
+
+For Skills Icons:
+Flat Icon (https://www.flaticon.com/)
+<br>
+For Python and MySQL Icons: 
+Simple Icon	(https://simpleicons.org/)
