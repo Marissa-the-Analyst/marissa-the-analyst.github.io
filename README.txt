@@ -38,7 +38,7 @@ Credits:
 
 ---
 
-# Portfolio Image Credits
+# Portfolio Image Credits #
 Credits for Project Images:
 Pexels (https://www.pexels.com/) <br>
 
