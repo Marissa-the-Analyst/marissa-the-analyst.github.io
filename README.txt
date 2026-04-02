@@ -40,10 +40,10 @@ Credits:
 
 Portfolio Image Credits
 Credits for Project Images:
-Pexels (https://www.pexels.com/) <br>
+Pexels (https://www.pexels.com/)
 
 For Skills Icons:
-Flat Icon (https://www.flaticon.com/)<br>
+Flat Icon (https://www.flaticon.com/)
 
 For Python and MySQL Icons: 
 Simple Icon	(https://simpleicons.org/)
