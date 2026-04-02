@@ -36,7 +36,9 @@ Credits:
 		Scrollex (github.com/ajlkn/jquery.scrollex)
 		Responsive Tools (github.com/ajlkn/responsive-tools)
 
---- 
+---
+
+# Portfolio Image Credits
 Credits for Project Images:
 Pexels (https://www.pexels.com/) <br>
 
