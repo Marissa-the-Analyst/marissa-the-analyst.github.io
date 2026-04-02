@@ -2146,6 +2146,9 @@ input, select, textarea {
 			line-height: 3.325em;
 			border-radius: 3.325em;
 			padding: 0 2em;
+			background-color: rgba(255, 255, 255, 0.233);
+			border: 1px solid rgba(255, 255, 255, 0.233);
+			backdrop-filter: blur(4px)
 		}
 
 		input[type="submit"].large,
@@ -2196,7 +2199,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 1px #8b9b8b;
+			box-shadow: inset 0 0 0 1px #f4f1ea;
 			color: #eeeeee !important;
 		}
 
@@ -2206,7 +2209,7 @@ input, select, textarea {
 		button:active,
 		.button:active {
 			background-color: rgba(71, 211, 229, 0.2);
-			box-shadow: inset 0 0 0 1px #8b9b8b;
+			box-shadow: inset 0 0 0 1px #f4f1ea;
 			color: #eeeeee !important;
 		}
 
@@ -6421,8 +6424,8 @@ input, select, textarea {
 			.gallery.style1 input[type="button"]:hover,
 			.gallery.style1 button:hover,
 			.gallery.style1 .button:hover {
-				box-shadow: inset 0 0 0 1px #8b9b8b;
-				color: #8b9b8b !important;
+				box-shadow: inset 0 0 0 1px #a68a80;
+				color: #a68a80 !important;
 			}
 
 			.gallery.style1 input[type="submit"]:active,
@@ -6745,8 +6748,8 @@ input, select, textarea {
 			.gallery.style2 input[type="button"]:hover,
 			.gallery.style2 button:hover,
 			.gallery.style2 .button:hover {
-				box-shadow: inset 0 0 0 1px #8b9b8b;
-				color: #8b9b8b !important;
+				box-shadow: inset 0 0 0 1px #c2a38a;
+				color: #c2a38a !important;
 			}
 
 			.gallery.style2 input[type="submit"]:active,
@@ -8620,4 +8623,391 @@ input, select, textarea {
 #no-results p {
     color: #55453a !important; /* Deep brown */
     font-style: italic;
+}
+
+/* --- 1. THE SYMMETRY ENGINE --- */
+#hero-reveal {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important; /* Forces equal height */
+    height: 100vh !important; /* Full screen height */
+    min-height: 600px;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #ffffff !important; /* Fixes the blue background issue */
+    border: none !important;
+	overflow: hidden !important; /* This chops off anything sticking out */
+    max-width: 100vw;
+}
+
+/* --- 2. LEFT SIDE: BIO CONTENT --- */
+#hero-reveal .content {
+    flex: 0 0 50% !important; /* Exactly half width */
+    width: 50% !important;
+    background-color: #ffffff !important; /* Forces pure white */
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10% 5% !important; /* Responsive padding */
+    margin: 0 !important;
+    z-index: 10;
+    /* Sharp edge definition */
+    border-right: 1px solid #eeeeee;
+}
+
+/* --- 3. RIGHT SIDE: IMAGE WRAPPER --- */
+#hero-reveal .image {
+    flex: 0 0 50% !important; /* Exactly half width */
+    width: 50% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    overflow: hidden;
+    background-color: #0b111a; /* Matches the dark mountain sky */
+}
+
+/* --- 4. THE ACTUAL PHOTO --- */
+#target-mountain {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    /* Foggy state */
+    filter: blur(15px) brightness(0.7);
+    transform: scale(1.1); 
+    transition: filter 1.5s ease, transform 1.5s ease !important;
+}
+#target-mountain {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    filter: blur(15px) brightness(0.7);
+    transform: scale(1.1); /* Hides blurry edges */
+    transition: filter 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+
+/* --- 4. THE NORTH STAR (4-Point Shape) --- */
+#target-star {
+    position: absolute;
+    z-index: 30;
+    top: 25%; /* Adjust vertically to your peak */
+    left: 55%; /* Adjust horizontally to your peak */
+    width: 16px;
+    height: 16px;
+    background: #fff9e6; 
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff9e6;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease 1s;
+}
+
+/* --- 5. OVERLAY CONTENT (Quote & Button) --- */
+.image-overlay-content {
+    position: absolute;
+    bottom: 5%; 
+    left: 5%;
+    text-align: left;
+    z-index: 20;
+    background: transparent !important;
+}
+
+.quote-text {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem;
+}
+
+.quote-text span {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.custom-ghost {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    color: #fff !important;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease !important;
+}
+
+.custom-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: #0b111a !important;
+}
+
+/* --- 6. THE TRIGGER LOGIC (Activated by Click) --- */
+#hero-reveal.is-clear #target-mountain {
+    filter: blur(0px) brightness(1) !important;
+    transform: scale(1);
+}
+
+#hero-reveal.is-clear #target-star {
+    opacity: 1 !important;
+    animation: pulseStar 3s infinite ease-in-out;
+}
+
+@keyframes pulseStar {
+    0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+    50% { transform: scale(1.5) rotate(5deg); filter: brightness(1.5); }
+    100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+}
+
+/* --- 7. MOBILE ADAPTATIONS --- */
+@media screen and (max-width: 736px) {
+    #hero-reveal {
+        flex-direction: column !important; /* Stack vertically on phones */
+        height: auto !important;
+    }
+
+    #hero-reveal .content, #hero-reveal .image {
+        width: 100% !important;
+        flex: none !important;
+    }
+
+    #hero-reveal .image {
+        min-height: 400px;
+    }
+
+    .image-overlay-content {
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        text-align: center;
+    }
+
+    .quote-text {
+        font-size: 0.9rem !important;
+        text-align: center;
+    }
+
+    #target-star {
+        top: 20%;
+        left: 50%;
+    }
+}
+
+/* --- THE SNAP-TO-LEFT PROFILE CIRCLE --- */
+.profile-circle {
+    display: block !important;
+    width: 160px !important;
+    height: 160px !important;
+    
+    /* Changed from '0 auto' to just '0' to snap it to the left */
+    margin: 0 0 1.5rem 0 !important; 
+    
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    border: 5px solid #f4f1ea !important; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    position: relative !important;
+    z-index: 50 !important;
+}
+
+/* --- THE CONTENT AREA --- */
+#hero-reveal .content.sharp-edge {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important; /* Keeps everything on that left axis */
+    text-align: left !important;
+    padding: 4rem 10% !important; /* Using % padding keeps it from hitting the very edge */
+}
+
+.profile-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    opacity: 1 !important; /* Forces it to be visible */
+    visibility: visible !important;
+}
+
+.profile-circle {
+    /* ... your other code ... */
+    border: 4px solid #f4f1ea !important;
+    outline: 1px solid rgba(0,0,0,0.05); /* This adds a "whisper" of a line outside the cream border */
+}
+
+/* --- TIGHTEN PROJECT GALLERY SPACING --- */
+
+/* 1. Shrink the gap at the very top of the section */
+.inner {
+    padding: 2rem 0 1rem 0 !important; /* Shrunk top/bottom padding */
+    margin-bottom: 0 !important;
+}
+
+/* 2. Tighten the gap between the description text and the Filters header */
+.inner p {
+    margin-bottom: 0.5rem !important;
+}
+
+/* 3. Pull the Filters section up closer to the text above it */
+#filters {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 2rem !important; /* Space between filters and the actual images below */
+}
+
+/* 4. Shrink the "Filters" sub-header specifically */
+#filters h3 {
+    margin-bottom: 1rem !important;
+    font-size: 0.9rem !important; /* Smaller, cleaner look for a sub-label */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* 5. Ensure the Filter Row itself doesn't have extra bottom margin */
+.filter-row {
+    margin-bottom: 0 !important;
+}
+/* --- THE COMPASS ICON --- */
+.compass-icon::before {
+    content: '🧭'; /* You can use an emoji or a FontAwesome icon here */
+    margin-right: 8px;
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+#find-direction:hover .compass-icon::before {
+    transform: rotate(45deg); /* Makes the compass "needle" move on hover */
+}
+
+/* --- STYLING THE TWO LEFT BUTTONS --- */
+.actions.stacked li {
+    margin-bottom: 1rem; /* Space between the two buttons */
+}
+
+/* Make the Contact button look slightly different (Optional) */
+.custom-contact-btn {
+    background-color: transparent !important;
+    box-shadow: inset 0 0 0 2px #f4f1ea !important; /* Soft Autumn Border */
+    color: #444 !important;
+}
+
+.custom-contact-btn:hover {
+    background-color: #f4f1ea !important;
+    color: #000 !important;
+}
+
+/* --- HORIZONTAL BUTTON ROW --- */
+
+.actions.hero-buttons {
+    display: flex !important;
+    flex-direction: row !important; /* Forces side-by-side */
+    flex-wrap: wrap; /* Allows them to stack if the screen gets REALLY tiny */
+    gap: 1rem; /* Space between the two buttons */
+    margin-top: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.actions.hero-buttons li {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Adjust the button sizing so they look like a matching set */
+.actions.hero-buttons .button {
+    min-width: 180px; /* Ensures buttons have a consistent, professional width */
+    text-align: center;
+    padding: 0 1.5rem !important; /* Better horizontal 'breathing' room */
+}
+
+/* --- MOBILE TWEAK --- */
+@media screen and (max-width: 480px) {
+    .actions.hero-buttons {
+        flex-direction: column !important; /* Stacks them only on small phones */
+        width: 100%;
+    }
+    .actions.hero-buttons .button {
+        width: 100% !important;
+    }
+}
+/* --- SKILLS TOOLKIT SECTION --- */
+
+#skills-toolkit {
+    background-color: #ffffff !important;
+    padding: 1rem 0 4rem 0 !important;
+    text-align: center;
+	margin-top: 0;
+}
+
+#skills-toolkit h2 {
+    margin-bottom: 0.5rem;
+}
+
+#skills-toolkit p {
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+/* THE GRID SYSTEM */
+.skills-grid {
+    display: grid;
+    /* This creates 4 equal columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem 1.5rem; /* 3rem vertical gap, 1.5rem horizontal */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* THE 10% TINT CIRCLE */
+.skill-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(142, 160, 145, 0.1) !important; /* Sage 10% */
+    border: 1px solid rgba(142, 160, 145, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    font-size: 2rem; /* Size for the icon inside */
+    color: #8ea091;   /* Icon color matches the Sage theme */
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item:hover .skill-icon-wrapper {
+    background-color: rgba(142, 160, 145, 0.2) !important;
+    border-color: #8ea091;
+}
+
+.skill-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #444;
+}
+
+/* --- RESPONSIVE FIX --- */
+@media screen and (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 column on phones */
+    }
 }
