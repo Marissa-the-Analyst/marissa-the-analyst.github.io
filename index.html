@@ -32,10 +32,13 @@
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 0.5rem 0.5rem 0.5rem;
   cursor: pointer;
   font-weight: 600;
   transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dropdown-toggle:hover {
@@ -88,6 +91,10 @@
   cursor: pointer;
   font-weight: 600;
   transition: background 0.2s;
+  padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .clear-btn:hover {
   background: #999;
@@ -281,6 +288,17 @@
       </div>
     </div>
 
+    <!-- Discipline Filter -->
+    <div class="dropdown">
+      <button class="dropdown-toggle">Discipline ▾</button>
+      <div class="dropdown-menu">
+        <label><input type="checkbox" name="Discipline" value="Data Cleaning"> Data Cleaning</label>
+        <label><input type="checkbox" name="Discipline" value="Forecasting&Modeling"> Forecasting&Modeling</label>
+        <label><input type="checkbox" name="Discipline" value="Full Cycle Analytics"> Full Cycle Analytics</label>
+        <label><input type="checkbox" name="Discipline" value="Report Generation"> Report Generation</label>
+        <label><input type="checkbox" name="Discipline" value="Data Visualization"> Data Visualization</label>
+      </div>
+    </div>
     <!-- Clear Filters button (outside all dropdowns) -->
     <button id="clearFilters" class="clear-btn">Clear Filters ✖</button>
 
@@ -290,7 +308,7 @@
 
 <!-- Gallery -->
        		<div class="gallery style2 medium lightbox onscroll-fade-in">
-    <article data-tool="Excel Python" data-category="Personal" data-year="2026">
+    <article data-tool="Excel Python" data-category="Personal" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/34.png" class="image" alt="Red Dragon Blowing Small Flame." />
         <div class="caption">
             <h3>The Red Dragon</h3>
@@ -300,7 +318,7 @@
             </ul>
         </div>
     </article>
-    <article data-tool="Excel Tableau" data-category="Personal" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Personal" data-year="2026" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/33.png" class="image" alt="Meat being cooked on a grill." />
         <div class="caption">
             <h3>Meat Me Halfway</h3>
@@ -310,7 +328,7 @@
             </ul>
         </div>
     </article>
-    <article data-tool="Excel Tableau" data-category="Nature" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Nature" data-year="2026" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/32.png" class="image" alt="Labradorite laying in grass." />
         <div class="caption">
             <h3>Cool Lookin' Rocks</h3>
@@ -320,7 +338,7 @@
             </ul>
         </div>
     </article>
-    <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/31.png" class="image" alt="Braum from League of Legends standing in River" />
         <div class="caption">
             <h3>2025 Yuumi Purrformance</h3>
@@ -330,7 +348,7 @@
             </ul>
         </div>
     </article>
-    <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/30.png" class="image" alt="Braum from League of Legends standing in River" />
         <div class="caption">
             <h3>The Aegis Archive</h3>
@@ -340,7 +358,7 @@
             </ul>
         </div>
     </article>
-    <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/29.png" class="image" alt="Hextech Dragon in the Pit" />
         <div class="caption">
             <h3>NA Dragon Souls Summer</h3>
@@ -350,7 +368,7 @@
             </ul>
         </div>
     </article>
-    <article data-tool="Python" data-category="Business" data-year="2026">
+    <article data-tool="Python" data-category="Business" data-year="2026" data-discipline="Report Generation">
         <img src="images/gallery/thumbs/28.png" class="image" alt="Volunteer going to a door talking to a neighbor" />
         <div class="caption">
             <h3>Large Data to Aggregated PDF</h3>
@@ -361,7 +379,7 @@
         </div>
     </article>
      
-    <article data-tool="Python" data-category="Supply Chain & Operations" data-year="2026">
+    <article data-tool="Python" data-category="Supply Chain & Operations" data-year="2026" data-discipline="Forecasting&Modeling">
         <img src="images/gallery/thumbs/27.png" class="image" alt="Employee standing in front of Egg Display" />
         <div class="caption">
             <h3>SARIMA v Prophet Inventory Forecast</h3>
@@ -372,7 +390,7 @@
         </div>
     </article>
 
-    <article data-tool="Excel" data-category="Business" data-year="2026">
+    <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Data Cleaning">
         <img src="images/gallery/thumbs/26.png" class="image" alt="Coffee Shop" />
         <div class="caption">
             <h3>Coffee Shop Data Cleaning</h3>
@@ -383,7 +401,7 @@
         </div>
     </article> 
 
-    <article data-tool="Excel" data-category="Business" data-year="2026">
+    <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Data Cleaning">
         <img src="images/gallery/thumbs/25.png" class="image" alt="Retail Store with grocery cart" />
         <div class="caption">
             <h3>Retail Store Data Cleaning</h3>
@@ -394,7 +412,7 @@
         </div>
     </article> 
 
-    <article data-tool="Excel Tableau" data-category="Business" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Business" data-year="2026" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/24.png" class="image" alt="Pokémon cards in a Binder" />
         <div class="caption">
             <h3>Card Shop Inventory</h3>
@@ -405,7 +423,7 @@
         </div>
     </article>  
 
-    <article data-tool="Excel Tableau" data-category="Literature" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Literature" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/23.png" class="image" alt="Rose on book" />
         <div class="caption">
             <h3>Watching Names Change as Hearts Change</h3>
@@ -416,7 +434,7 @@
         </div>
     </article>  
 
-    <article data-tool="Excel Tableau" data-category="Business" data-year="2026">
+    <article data-tool="Excel Tableau" data-category="Business" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/22.png" class="image" alt="Gum on shelves" />
         <div class="caption">
             <h3>Every Gum Flavor, a Sticky Analysis</h3>
@@ -427,7 +445,7 @@
         </div> 
     </article>  
 
-     <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2025">
+     <article data-tool="Excel Tableau" data-category="Media/Entertainment" data-year="2025" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/21.png" class="image" alt="Stardew Valley Recipe" />
         <div class="caption">
             <h3>Stardew Valley Recipe Book</h3>
@@ -438,7 +456,7 @@
         </div> 
      </article>
 
-	<article data-tool="Excel" data-category="Business" data-year="2025">
+	<article data-tool="Excel" data-category="Business" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/19.png" class="image" alt="Spruce It Up Tree Report" />
         <div class="caption">
             <h3>Spruce It Up Tree Report</h3>
@@ -449,7 +467,7 @@
         </div>
     </article>
 
-	<article data-tool="Tableau Excel" data-category="Literature" data-year="2025">
+	<article data-tool="Tableau Excel" data-category="Literature" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/20.png" class="image" alt="Crawler or Cruller?" />
         <div class="caption">
             <h3>Crawler or Cruller?</h3>
@@ -460,7 +478,7 @@
         </div>
     </article>	
 
-	<article data-tool="Tableau Excel" data-category="Personal" data-year="2025">
+	<article data-tool="Tableau Excel" data-category="Personal" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/12.png" class="image" alt="Stroll to 2,800,000" />
         <div class="caption">
             <h3>Stroll to 2,800,000</h3>
@@ -471,7 +489,7 @@
         </div>
     </article>
 
-    <article data-tool="PowerBI Excel Python" data-category="Supply Chain & Operations" data-year="2025">
+    <article data-tool="PowerBI Excel Python" data-category="Supply Chain & Operations" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/18.png" class="image" alt="PCB Process Improvement" />
         <div class="caption">
             <h3>PCB Process Improvement</h3>
@@ -482,7 +500,7 @@
         </div>
     </article>
 
-    <article data-tool="PowerBI Excel" data-category="Nature" data-year="2025">
+    <article data-tool="PowerBI Excel" data-category="Nature" data-year="2025" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/17.png" class="image" alt="Groundhog Day Exercise" />
         <div class="caption">
             <h3>Groundhog Day Audience Exercise</h3>
@@ -493,7 +511,7 @@
         </div>
     </article>
 
-    <article data-tool="Python" data-category="Business" data-year="2025">
+    <article data-tool="Python" data-category="Business" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/15.png" class="image" alt="HR Attrition" />
         <div class="caption">
             <h3>HR Attrition Project</h3>
@@ -504,7 +522,7 @@
         </div>
     </article>
 
-    <article data-tool="Excel" data-category="Business" data-year="2025">
+    <article data-tool="Excel" data-category="Business" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/13.png" class="image" alt="BCG Matrix" />
         <div class="caption">
             <h3>BCG Matrix Dog-Treat-Co</h3>
@@ -515,7 +533,7 @@
         </div>
     </article>
 
-    <article data-tool="Tableau Excel" data-category="Media/Entertainment" data-year="2025">
+    <article data-tool="Tableau Excel" data-category="Media/Entertainment" data-year="2025" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/14.png" class="image" alt="LTA Rankings" />
         <div class="caption">
             <h3>LTA North Season 3 Rankings</h3>
@@ -526,7 +544,7 @@
         </div>
     </article>
 
-    <article data-tool="Tableau Excel" data-category="Nature" data-year="2025">
+    <article data-tool="Tableau Excel" data-category="Nature" data-year="2025" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/11.png" class="image" alt="Tornado Stats" />
         <div class="caption">
             <h3>Northwest Georgia Tornado Stats</h3>
@@ -537,7 +555,7 @@
         </div>
     </article>
 
-    <article data-tool="Python" data-category="Supply Chain & Operations" data-year="2025">
+    <article data-tool="Python" data-category="Supply Chain & Operations" data-year="2025" data-discipline="Forecasting&Modeling">
         <img src="images/gallery/thumbs/10.png" class="image" alt="ARIMA Forecast" />
         <div class="caption">
             <h3>Veggie Sales ARIMA Forecast</h3>
@@ -548,7 +566,7 @@
         </div>
     </article>
 
-    <article data-tool="Excel" data-category="Literature" data-year="2024">
+    <article data-tool="Excel" data-category="Literature" data-year="2024" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/07.png" class="image" alt="Warrior Cats" />
         <div class="caption">
             <h3>Warrior Cats Series Analysis</h3>
@@ -559,7 +577,7 @@
         </div>
     </article>
 
-    <article data-tool="MySQL Tableau" data-category="Nature" data-year="2024">
+    <article data-tool="MySQL Tableau" data-category="Nature" data-year="2024" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/08.png" class="image" alt="Shark Attacks" />
         <div class="caption">
             <h3>Shark Attacks Analysis</h3>
@@ -570,7 +588,7 @@
         </div>
     </article>
 
-    <article data-tool="Python Excel" data-category="Business" data-year="2025">
+    <article data-tool="Python Excel" data-category="Business" data-year="2025" data-discipline="Data Cleaning">
         <img src="images/gallery/thumbs/09.png" class="image" alt="HR Data Cleanse" />
         <div class="caption">
             <h3>HR Attrition Data Cleanse and Encoding</h3>
@@ -581,7 +599,7 @@
         </div>
     </article>
 
-    <article data-tool="Excel" data-category="Business" data-year="2024">
+    <article data-tool="Excel" data-category="Business" data-year="2024" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/01.png" class="image" alt="Bike Store" />
         <div class="caption">
             <h3>Bike Store Dashboard</h3>
@@ -592,7 +610,7 @@
         </div>
     </article>
 
-    <article data-tool="Excel" data-category="Business" data-year="2024">
+    <article data-tool="Excel" data-category="Business" data-year="2024" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/02.png" class="image" alt="TigerBrew" />
         <div class="caption">
             <h3>TigerBrew Dashboard</h3>
@@ -603,7 +621,7 @@
         </div>
     </article>
 
-    <article data-tool="PowerBI Excel" data-category="Business" data-year="2024">
+    <article data-tool="PowerBI Excel" data-category="Business" data-year="2024" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/05.png" class="image" alt="Engagement Survey" />
         <div class="caption">
             <h3>Data Professional Engagement Survey</h3>
@@ -614,7 +632,7 @@
         </div>
     </article>
 
-    <article data-tool="Tableau" data-category="Business" data-year="2024">
+    <article data-tool="Tableau" data-category="Business" data-year="2024" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/06.png" class="image" alt="Airbnb" />
         <div class="caption">
             <h3>Airbnb Bedroom Price Visualization</h3>
@@ -625,7 +643,7 @@
         </div>
     </article>
 
-    <article data-tool="MySQL" data-category="Business" data-year="2024">
+    <article data-tool="MySQL" data-category="Business" data-year="2024" data-discipline="Data Visualization">
         <img src="images/gallery/thumbs/04.png" class="image" alt="SQL Layoffs" />
         <div class="caption">
             <h3>SQL Data Cleaning and Exploratory Analysis on Layoff Data</h3>
@@ -686,6 +704,7 @@ function filterProjects() {
   const selectedYear = Array.from(document.querySelectorAll("input[name='year']:checked")).map(cb => cb.value);
   const selectedTools = Array.from(document.querySelectorAll("input[name='tool']:checked")).map(cb => cb.value);
   const selectedCategories = Array.from(document.querySelectorAll("input[name='category']:checked")).map(cb => cb.value);
+  const selectedDiscipline = Array.from(document.querySelectorAll("input[name='Discipline']:checked")).map(cb => cb.value);
 
   let visibleCount = 0;
 
@@ -693,6 +712,7 @@ function filterProjects() {
     const projectYear = project.getAttribute("data-year");
     const projectCategory = project.getAttribute("data-category");
     const projectToolsArray = (project.getAttribute("data-tool") || "").split(" ");
+    const projectDiscipline = project.getAttribute("data-discipline");
 
     const matchesYear = selectedYear.length === 0 || selectedYear.includes(projectYear);
     
@@ -702,14 +722,17 @@ function filterProjects() {
     
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(projectCategory);
 
-    if (matchesYear && matchesTool && matchesCategory) {
+    // NEW: Check if the project discipline matches the selection
+    const matchesDiscipline = selectedDiscipline.length === 0 || selectedDiscipline.includes(projectDiscipline);
+
+// Update the condition to include matchesDiscipline
+    if (matchesYear && matchesTool && matchesCategory && matchesDiscipline) {
       project.style.display = "block";
       visibleCount++; 
     } else {
       project.style.display = "none";
     }
   });
-
  // Toggle the No Results message
   noResultsMsg.style.display = (visibleCount === 0) ? "block" : "none";
 }
