@@ -7007,6 +7007,7 @@ input, select, textarea {
 
 		}
 
+
 /* Gallery (lightbox) */
 
 	@-moz-keyframes gallery-modal-spinner {
@@ -7107,6 +7108,29 @@ input, select, textarea {
 		opacity: 0;
 		z-index: 0;
 	}
+	
+.gallery.style3 {
+    display: flex;
+    flex-wrap: nowrap; /* Forces one single line */
+    overflow-x: auto;   /* Enables the horizontal scroll */
+    overflow-y: hidden;
+    gap: 20px;
+    padding: 20px 0;    
+    -webkit-overflow-scrolling: touch; 
+    background-color: transparent;
+    position: relative;
+    
+    /* ADD THIS: Ensures the items don't try to shrink to fit the screen */
+    align-items: stretch;
+}
+
+.gallery.style3 article {
+    /* flex: 0 0 means: don't grow, don't shrink, and stay at 22.5rem */
+    flex: 0 0 22.5rem; 
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
 
 		.gallery.lightbox .modal:before {
 			-moz-animation: gallery-modal-spinner 1s infinite linear;
@@ -8903,11 +8927,12 @@ input, select, textarea {
 .actions.hero-buttons {
     display: flex !important;
     flex-direction: row !important; /* Forces side-by-side */
-    flex-wrap: wrap; /* Allows them to stack if the screen gets REALLY tiny */
-    gap: 1rem; /* Space between the two buttons */
+    flex-wrap: nowrap; /* Allows them to stack if the screen gets REALLY tiny */
+    gap: .5rem; /* Space between the two buttons */
     margin-top: 0 !important;
     padding: 0 !important;
     list-style: none !important;
+	justify-content: flex-start;
 }
 
 .actions.hero-buttons li {
@@ -8917,9 +8942,11 @@ input, select, textarea {
 
 /* Adjust the button sizing so they look like a matching set */
 .actions.hero-buttons .button {
-    min-width: 180px; /* Ensures buttons have a consistent, professional width */
-    text-align: center;
-    padding: 0 1.5rem !important; /* Better horizontal 'breathing' room */
+    min-width: 100px;
+	flex: 1;
+	text-align: center;
+    padding: 0 0.75rem !important; /* Better horizontal 'breathing' room */
+	font-size: 0.9rem
 }
 
 /* --- MOBILE TWEAK --- */
@@ -9011,3 +9038,4 @@ input, select, textarea {
         grid-template-columns: 1fr; /* 1 column on phones */
     }
 }
+
