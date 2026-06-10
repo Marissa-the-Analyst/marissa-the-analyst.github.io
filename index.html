@@ -68,7 +68,9 @@
 /* Checkbox labels */
 .dropdown-menu label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
   gap: 0.4rem;
   font-size: 0.85rem;
   padding: 0.2rem 0;
@@ -122,6 +124,7 @@
             <ul class="actions hero-buttons">
                 <li><a href="#first" id="view-projects-btn" class="button custom-contact-btn">View My Projects</a></li>
                 <li><a href="#bottom" class="button custom-contact-btn">Contact Info</a></li>
+                <li><a href="#aboutme" class="button custom-contact-btn"> About Me</a></li>
             </ul>
     </div>
 
@@ -293,7 +296,7 @@
       <button class="dropdown-toggle">Discipline ▾</button>
       <div class="dropdown-menu">
         <label><input type="checkbox" name="Discipline" value="Data Cleaning"> Data Cleaning</label>
-        <label><input type="checkbox" name="Discipline" value="Forecasting&Modeling"> Forecasting&Modeling</label>
+        <label><input type="checkbox" name="Discipline" value="Forecasting&Modeling"> Forecasting & Modeling</label>
         <label><input type="checkbox" name="Discipline" value="Full Cycle Analytics"> Full Cycle Analytics</label>
         <label><input type="checkbox" name="Discipline" value="Report Generation"> Report Generation</label>
         <label><input type="checkbox" name="Discipline" value="Data Visualization"> Data Visualization</label>
@@ -308,6 +311,66 @@
 
 <!-- Gallery -->
        		<div class="gallery style2 medium lightbox onscroll-fade-in">
+    <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Report Generation">
+        <img src="images/gallery/thumbs/40.png" class="image" alt="Person holding a than you note." />
+        <div class="caption">
+            <h3>Elder Care: May Outreach</h3>
+            <p>I built a dynamic report to identify U.S.-based patients aged 70+ with May 2025 appointments. Using Excel functions (FILTER, CHOOSECOLS, SORT), I created a updatable system that streamlines the "Supporting Our Elders" outreach program, ensuring the clinic can efficiently coordinate card orders and patient engagement.</p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/Elder-Care-May-Outreach" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+   <article data-tool="Excel" data-category="Supply Chain & Operations" data-year="2026" data-discipline="Data Cleaning">
+        <img src="images/gallery/thumbs/39.png" class="image" alt="Jar of dog treats with a note that says Treat for your Furry Baby" />
+        <div class="caption">
+            <h3>No More Ruff Data</h3>
+            <p>I transformed a synthetic, warehouse-scale dataset of 2,080 pet products into a clean, analysis-ready resource using advanced filtering, logical formulas, and text cleaning.</p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/No-More-Ruff-Data" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+   <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Data Cleaning">
+        <img src="images/gallery/thumbs/38.png" class="image" alt="Person holding paper" />
+        <div class="caption">
+            <h3>Data Healed</h3>
+            <p>Restored a messy clinic appointments dataset in Excel by resolving ID duplicates, standardizing names, and recoding gender. I also implemented a currency conversion system to normalize global billing into USD. </p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/Data-Healed" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+   <article data-tool="Excel" data-category="Media/Entertainment" data-year="2026" data-discipline="Data Cleaning">
+        <img src="images/gallery/thumbs/37.png" class="image" alt="Movies" />
+        <div class="caption">
+            <h3>Messy Movie Mending</h3>
+            <p>Transformed a messy, semi-colon-delimited Kaggle dataset into a usable resource using Excel. I tackled inconsistent formatting, corrected date structures, and validated entries against IMDB. This project highlights the precision required to salvage "rough" data while balancing manual cleanup with the risks of altering historical records.</p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/MessyMovieMending" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+   <article data-tool="Excel" data-category="Media/Entertainment" data-year="2026" data-discipline="Data Cleaning">
+        <img src="images/gallery/thumbs/36.png" class="image" alt="Women singing" />
+        <div class="caption">
+            <h3>Music Tour Data Cleaning</h3>
+            <p>From dirty Wikipedia scrape to polished dataset, this project cleans a Kaggle dataset on the highest-grossing tours by women. Using Excel and Power Query, I removed artifacts, fixed ranking errors, and validated 2025 financial data to ensure a high-quality, ready-to-use dataset.</p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/MusicTourDataCleaning" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+   <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Data Cleaning">
+        <img src="images/gallery/thumbs/35.png" class="image" alt="Hand on a table with a chart" />
+        <div class="caption">
+            <h3>Excel: Managing and Analyzing Data</h3>
+            <p>I took on Oz du Soleil's Managing Data in Excel Course and Recorded my Challenge work to demonstrate my commitment to continue learning!</p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/Oz-Managing-Data" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
     <article data-tool="Excel Python" data-category="Personal" data-year="2026" data-discipline="Full Cycle Analytics">
         <img src="images/gallery/thumbs/34.png" class="image" alt="Red Dragon Blowing Small Flame." />
         <div class="caption">
@@ -657,7 +720,7 @@
     <div id="no-results" style="display:none; width: 100%; padding: 5rem 2rem; text-align: center;">
         <i class="fas fa-search" style="font-size: 3rem; color: #8b9b8b; margin-bottom: 1rem; display: block;"></i>
         <h3 style="color: #8b9b8b;">No Matches Found</h3>
-        <p style="color: #55453a;">Try adjusting your "Data Tools" or "Data Categories" selections.</p>
+        <p style="color: #55453a;">Try adjusting your "Data Tools", "Disciplines", or "Data Categories" selections.</p>
     </div>
 </div>
 
