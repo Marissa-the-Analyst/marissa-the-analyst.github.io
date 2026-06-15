@@ -65,25 +65,25 @@
   display: block;
 }
 
-/* Checkbox labels */
+/* 1. Base style for ALL dropdown options (prevents jumping) */
 .dropdown-menu label {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  padding: 0.2rem 0;
-  cursor: pointer;
+    display: block;            /* Makes the hover/select box span the full width */
+    padding: 0.4rem 0.8rem;    /* Gives all items identical, consistent spacing */
+    margin: 0;                 /* Clears any default margins that cause shifting */
+    cursor: pointer;         
+    text-align: left;  /* Gives a nice pointer hand on hover */
+    box-sizing: border-box;    
 }
 
-/* Highlight selected dropdown options */
+/* 2. Highlight style ONLY for the selected option */
 .dropdown-menu label.selected {
-  background-color: #8b9b8b; /* highlight color */
-  color: #fff;
-  border-radius: 4px;
-  padding: 0.2rem 0.4rem;
+    background-color: #8b9b8b; /* your highlight color */
+    color: #fff;
+    border-radius: 2px;
+    
 }
+
+
 .clear-btn {
   background: #ccc;
   color: #333;
@@ -310,7 +310,37 @@
 
 
 <!-- Gallery -->
-       		<div class="gallery style2 medium lightbox onscroll-fade-in">
+<div class="gallery style2 medium lightbox onscroll-fade-in">
+    <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Report Generation">
+        <img src="images/gallery/thumbs/43.png" class="image" alt="Dog with santa hat" />
+        <div class="caption">
+            <h3>Christmas Prep In July</h3>
+            <p>I analyzed a warehouse-style dataset to identify “Christmas Apparel” items and paired them with red/green dog toys and pet hardware for compact, ready-to-deploy side stack displays. Using Excel’s dynamic filters, this approach helps merchandisers quickly build festive, high-impact in-store setups with complementary products. </p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/Christmas-Prep-in-July/blob/main/README.md" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+    <article data-tool="Excel" data-category="Supply Chain & Operations" data-year="2026" data-discipline="Report Generation">
+        <img src="images/gallery/thumbs/42.png" class="image" alt="Women holding a treat near a dog's nose." />
+        <div class="caption">
+            <h3>Salmon Recall and its Impacts</h3>
+            <p>Analyzed Hill’s Science Diet recall by identifying salmon-based SKUs with a dynamic FILTER query in Excel. Built a synthetic inventory dataset to match affected items to store stock, then identified impacted locations and contacts, enabling efficient recall communication and reverse logistics planning. </p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/Salmon-Recall" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
+    <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Report Generation">
+        <img src="images/gallery/thumbs/41.png" class="image" alt="A ladder in a mid-remodeled space." />
+        <div class="caption">
+            <h3>Clinic Remodel Query</h3>
+            <p>Built an Excel report to identify Neurology patients needing rescheduling during a 7/14–7/28/2025 closure. Used FILTER, SORT, and CHOOSECOLS to isolate records, and XLOOKUP to attach phone numbers (simulated via TEXTJOIN), creating a clean, actionable contact list.</p>
+            <ul class="actions fixed">
+                <li><a href="https://github.com/Marissa-the-Analyst/Clinic-Remodel-Query/" class="button small">View Project</a></li>
+            </ul>
+        </div>
+    </article>
     <article data-tool="Excel" data-category="Business" data-year="2026" data-discipline="Report Generation">
         <img src="images/gallery/thumbs/40.png" class="image" alt="Person holding a than you note." />
         <div class="caption">
@@ -706,7 +736,7 @@
         </div>
     </article>
 
-    <article data-tool="MySQL" data-category="Business" data-year="2024" data-discipline="Data Visualization">
+    <article data-tool="MySQL" data-category="Business" data-year="2024" data-discipline="Full Cycle Analysis">
         <img src="images/gallery/thumbs/04.png" class="image" alt="SQL Layoffs" />
         <div class="caption">
             <h3>SQL Data Cleaning and Exploratory Analysis on Layoff Data</h3>
