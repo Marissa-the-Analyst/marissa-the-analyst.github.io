@@ -173,14 +173,19 @@
    RESPONSIVE MOBILE STYLES (MAX-WIDTH: 850px)
    ========================================== */
 @media screen and (max-width: 850px) {
-    /* 1. Increased top padding slightly to give the first photo breathing room from headers */
+    /* 1. Force the section to give a generous cushion at the very top of the screen */
     #hero-reveal.fullscreen {
-        padding-top: 6rem;
-        padding-bottom: 3rem;
+        padding-top: 7rem !important; 
+        padding-bottom: 3rem !important;
     }
 
     #hero-reveal .content {
         padding: 5px 30px;
+    }
+
+    /* 2. Push the entire gallery group down so it cannot touch the top clipping boundary */
+    .gallery-container {
+        padding-top: 40px !important;
     }
 
     /* Make the photo circular containers completely centered and responsive */
@@ -189,13 +194,18 @@
         max-width: 280px; 
         height: 75vw; 
         max-height: 280px;
-        margin: 0 auto 140px auto !important; 
+        margin: 0 auto 140px auto !important; /* Keeps room for captions below */
         align-self: center !important; 
     }
 
-    /* FIX FOR 1ST PHOTO: Shifts the image down so the graduation cap isn't cut off */
-    .photo-wrapper:first-of-type .feature-photo {
-        object-position: center 15%; /* Adjusts vertical alignment to prioritize the top of the photo */
+    /* 3. Give the FIRST circle an extra top margin cushion just to be absolutely safe */
+    .photo-wrapper:first-of-type {
+        margin-top: 20px !important;
+    }
+
+    /* Reset photo positioning back to a clean default center */
+    .feature-photo {
+        object-position: center center !important;
     }
 
     .photo-wrapper::after {
@@ -237,13 +247,6 @@
     
     .testimonial-card:hover {
         transform: translateY(-15px);
-    }
-}
-
-/* Extra safety padding loop for compact screen viewports */
-@media screen and (max-width: 400px) {
-    .photo-wrapper {
-        margin-bottom: 160px !important; /* Extra breathing space if text wraps to 3+ lines */
     }
 }
 </style>
