@@ -173,8 +173,9 @@
    RESPONSIVE MOBILE STYLES (MAX-WIDTH: 850px)
    ========================================== */
 @media screen and (max-width: 850px) {
+    /* 1. Increased top padding slightly to give the first photo breathing room from headers */
     #hero-reveal.fullscreen {
-        padding-top: 20rem;
+        padding-top: 6rem;
         padding-bottom: 3rem;
     }
 
@@ -188,8 +189,13 @@
         max-width: 280px; 
         height: 75vw; 
         max-height: 280px;
-        margin: 0 auto 140px auto !important; /* Increased bottom margin to prevent caption overlaps */
+        margin: 0 auto 140px auto !important; 
         align-self: center !important; 
+    }
+
+    /* FIX FOR 1ST PHOTO: Shifts the image down so the graduation cap isn't cut off */
+    .photo-wrapper:first-of-type .feature-photo {
+        object-position: center 15%; /* Adjusts vertical alignment to prioritize the top of the photo */
     }
 
     .photo-wrapper::after {
@@ -200,19 +206,19 @@
         border-width: 3px;
     }
 
-    /* CRITICAL FIX: Targeted using the exact matching desktop specificity to force centering */
+    /* Targeted using the exact matching desktop specificity to force centering */
     .photo-wrapper.align-left .caption,
     .photo-wrapper.align-right .caption,
     .caption {
         position: absolute !important; 
-        top: 100% !important;        /* Snap it beneath the circle */
-        left: 50% !important;       /* Center anchor point */
-        right: auto !important;       /* Clear out desktop right layout */
-        transform: translateX(-50%) !important; /* Perfect pixel-center alignment */
-        width: 85vw !important;       /* Fluid responsive box width */
-        max-width: 290px !important;  /* Keep it safe from edge bleeding */
-        margin-top: 20px !important;  /* Clear room past the spinning dot ring */
-        background: rgba(0, 0, 0, 0.8) !important; /* Dark theme contrast */
+        top: 100% !important;        
+        left: 50% !important;       
+        right: auto !important;       
+        transform: translateX(-50%) !important; 
+        width: 85vw !important;       
+        max-width: 290px !important;  
+        margin-top: 20px !important;  
+        background: rgba(0, 0, 0, 0.8) !important; 
         font-size: 0.85rem !important; 
         padding: 12px !important;
         box-sizing: border-box !important;
