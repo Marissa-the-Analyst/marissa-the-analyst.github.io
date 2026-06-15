@@ -100,7 +100,6 @@
 
 .photo-wrapper.is-visible::after {
     opacity: .5;
-    /* 6s spin, ease-out makes it decelerate gracefully */
     animation: spin-once 2.5s ease-out forwards;
 }
 
@@ -114,7 +113,7 @@
 .photo-wrapper.align-right { align-self: flex-end; }
 
 
-/* 12. Caption Styling */
+/* 12. Caption Styling (Desktop Defaults) */
 .caption {
     position: absolute;
     top: 50%;
@@ -154,46 +153,45 @@
 }
 
 .testimonial-card:hover {
-    transform: translateY(-50px); /* Slightly increased lift for better hover feel */
+    transform: translateY(-50px);
     background: rgba(255, 255, 255, 0.1);
 }
 
 .testimonial-card p {
-    font-size: 0.95rem; /* Made slightly smaller for a cleaner look */
+    font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 1rem;
-    font-style: italic; /* Added for a classic testimonial look */
+    font-style: italic;
 }
 
 .testimonial-card strong {
-    font-size: 0.85rem; /* Keeps the name distinct */
+    font-size: 0.85rem;
     opacity: 0.8;
 }
 
-/* Responsive adjustments for mobile and tablets */
+/* ==========================================
+   RESPONSIVE MOBILE STYLES (MAX-WIDTH: 850px)
+   ========================================== */
 @media screen and (max-width: 850px) {
-    /* 1. Reduce overall padding on the hero section to save screen space */
     #hero-reveal.fullscreen {
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
 
-    /* 2. Add padding to the content container so text doesn't touch the screen edges */
     #hero-reveal .content {
         padding: 5px 30px;
     }
 
-    /* 3. Make the photo wrappers responsive so they don't break the screen width */
+    /* Make the photo circular containers completely centered and responsive */
     .photo-wrapper {
-        width: 80vw; /* Take up 80% of the viewport width */
-        max-width: 300px; /* Cap it so it doesn't get too large on tablets */
-        height: 80vw; /* Keep it perfectly square */
-        max-height: 300px;
-        margin: 0 auto 100px auto !important; /* Center it and leave room for the caption */
-        align-self: center !important; /* Override the desktop align-left/right */
+        width: 75vw; 
+        max-width: 280px; 
+        height: 75vw; 
+        max-height: 280px;
+        margin: 0 auto 140px auto !important; /* Increased bottom margin to prevent caption overlaps */
+        align-self: center !important; 
     }
 
-    /* 4. Tweak the spinning border slightly for mobile */
     .photo-wrapper::after {
         top: -8px;
         left: -8px;
@@ -202,22 +200,24 @@
         border-width: 3px;
     }
 
-    /* 5. Fix Caption positioning - pin it directly below the responsive image */
+    /* CRITICAL FIX: Targeted using the exact matching desktop specificity to force centering */
+    .photo-wrapper.align-left .caption,
+    .photo-wrapper.align-right .caption,
     .caption {
-        position: absolute; 
-        top: 100%; /* Push it just below the photo wrapper */
-        left: 50% !important; /* Center horizontally relative to the wrapper */
-        right: auto !important;
-        transform: translateX(-50%) !important; /* Perfect centering math */
-        width: 100vw; /* Allow it to span the screen width */
-        max-width: 320px; /* But keep it constrained */
-        margin-top: 25px; /* Clear the spinning border */
-        background: rgba(0, 0, 0, 0.75); /* Darker background for readability */
-        font-size: 0.9rem; /* Slightly smaller text */
-        padding: 12px;
+        position: absolute !important; 
+        top: 100% !important;        /* Snap it beneath the circle */
+        left: 50% !important;       /* Center anchor point */
+        right: auto !important;       /* Clear out desktop right layout */
+        transform: translateX(-50%) !important; /* Perfect pixel-center alignment */
+        width: 85vw !important;       /* Fluid responsive box width */
+        max-width: 290px !important;  /* Keep it safe from edge bleeding */
+        margin-top: 20px !important;  /* Clear room past the spinning dot ring */
+        background: rgba(0, 0, 0, 0.8) !important; /* Dark theme contrast */
+        font-size: 0.85rem !important; 
+        padding: 12px !important;
+        box-sizing: border-box !important;
     }
 
-    /* 6. Testimonial Adjustments */
     .testimonials-container {
         flex-direction: column;
         align-items: center;
@@ -230,17 +230,16 @@
     }
     
     .testimonial-card:hover {
-        transform: translateY(-15px); /* Reduce the hover lift on mobile so it doesn't fly off-screen */
+        transform: translateY(-15px);
     }
 }
 
-/* Extra adjustment for very small screens (like iPhone SE) */
+/* Extra safety padding loop for compact screen viewports */
 @media screen and (max-width: 400px) {
     .photo-wrapper {
-        margin-bottom: 120px !important; /* Extra room if captions wrap to 3 lines */
+        margin-bottom: 160px !important; /* Extra breathing space if text wraps to 3+ lines */
     }
 }
-
 </style>
 
 
