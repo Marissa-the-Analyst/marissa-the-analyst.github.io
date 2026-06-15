@@ -9035,7 +9035,7 @@ input, select, textarea {
 
 @media screen and (max-width: 480px) {
     .skills-grid {
-        grid-template-columns: 1fr; /* 1 column on phones */
+        grid-template-columns: repeat(2, 1fr); /* 2 column on phones */
     }
 }
 
