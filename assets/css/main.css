@@ -8717,21 +8717,108 @@ input, select, textarea {
     transition: filter 1.5s ease-in-out, transform 1.5s ease-in-out !important;
 }
 
-/* --- 4. THE NORTH STAR (4-Point Shape) --- */
-#target-star {
+/* --- 4. THE NORTH STAR CONTAINER & SHAPE --- */
+/* The wrapper handles positioning, mouse interactions, and coordinates */
+#target-star-wrapper {
     position: absolute;
     z-index: 30;
-    top: 25%; /* Adjust vertically to your peak */
+    top: 25%;  /* Adjust vertically to your peak */
     left: 55%; /* Adjust horizontally to your peak */
+    width: 32px;  /* Generous invisible hitbox makes hovering effortless */
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease 1s;
+}
+
+/* The inner layer handles your signature design vector */
+#target-star {
     width: 16px;
     height: 16px;
     background: #fff9e6; 
     clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
     box-shadow: 0 0 10px #fff, 0 0 20px #fff9e6;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.8s ease 1s;
 }
+
+/* --- MINIMALIST STORIES TOOLTIP (BOTTOM ALIGNED) --- */
+.star-tooltip.minimal-style {
+    position: absolute;
+    top: 40px; 
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+    
+    width: 360px;
+    text-align: left;
+    white-space: normal !important; 
+    z-index: 10000 !important;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* 1. Header with Balanced Emblems & Dashed Separator */
+.star-tooltip.minimal-style .tooltip-header {
+    color: #fff9e6 !important; 
+    font-size: 0.8rem !important;
+    display: block;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    
+    /* NEW: Sleek dashed data-grid line under the header */
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.25) !important;
+    padding-bottom: 0.5rem !important; /* Space between text and dashed line */
+    margin-bottom: 0.75rem !important; /* Space between dashed line and quote */
+}
+
+/* 2. First Sentence (Italicized Context Block) */
+.star-tooltip.minimal-style .highlight-quote {
+    font-style: italic !important;
+    color: #fff !important;
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.75rem !important; 
+}
+
+/* 3. Second Sentence (Clean Standard Vector Text) */
+.star-tooltip.minimal-style .main-text {
+    font-style: normal !important;
+    color: #fff !important;
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.85rem !important; 
+}
+
+/* 4. Elegant Footer Sign-Off */
+.star-tooltip.minimal-style .tooltip-footer {
+    font-size: 0.72rem !important;
+    color: rgba(255, 255, 255, 0.65) !important; 
+    text-align: center;
+    font-style: normal !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important; 
+    padding-top: 0.5rem !important;
+}
+
+/* Action: Reveal the UI card when hovering over the wrapper */
+#target-star-wrapper:hover .star-tooltip.minimal-style {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
 
 /* --- 5. OVERLAY CONTENT (Quote & Button) --- */
 .image-overlay-content {
@@ -8754,6 +8841,7 @@ input, select, textarea {
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
+/* Restored completely to your original ghost styling */
 .custom-ghost {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
@@ -8767,22 +8855,30 @@ input, select, textarea {
     color: #0b111a !important;
 }
 
+
 /* --- 6. THE TRIGGER LOGIC (Activated by Click) --- */
 #hero-reveal.is-clear #target-mountain {
     filter: blur(0px) brightness(1) !important;
     transform: scale(1);
 }
 
-#hero-reveal.is-clear #target-star {
+/* Unlocks the star container and active mouse hover events */
+#hero-reveal.is-clear #target-star-wrapper {
     opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Keeps your background pulse loop running perfectly inside the container */
+#hero-reveal.is-clear #target-star {
     animation: pulseStar 3s infinite ease-in-out;
 }
 
 @keyframes pulseStar {
     0% { transform: scale(1) rotate(0deg); filter: brightness(1); }
-    50% { transform: scale(1.5) rotate(5deg); filter: brightness(1.5); }
+    50% { transform: scale(1.4) rotate(5deg); filter: brightness(1.4); }
     100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
 }
+
 
 /* --- 7. MOBILE ADAPTATIONS --- */
 @media screen and (max-width: 736px) {
@@ -8813,37 +8909,26 @@ input, select, textarea {
         text-align: center;
     }
 
-    #target-star {
+    /* Shift position properties cleanly to wrapper controls for mobile responsive viewports */
+    #target-star-wrapper {
         top: 20%;
         left: 50%;
     }
 }
+
 
 /* --- THE SNAP-TO-LEFT PROFILE CIRCLE --- */
 .profile-circle {
     display: block !important;
     width: 160px !important;
     height: 160px !important;
-    
-    /* Changed from '0 auto' to just '0' to snap it to the left */
     margin: 0 0 1.5rem 0 !important; 
-    
     border-radius: 50% !important;
     overflow: hidden !important;
-    border: 5px solid #f4f1ea !important; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    border: 4px solid #f4f1ea !important;
+    outline: 1px solid rgba(0,0,0,0.05);
     position: relative !important;
     z-index: 50 !important;
-}
-
-/* --- THE CONTENT AREA --- */
-#hero-reveal .content.sharp-edge {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: flex-start !important; /* Keeps everything on that left axis */
-    text-align: left !important;
-    padding: 4rem 10% !important; /* Using % padding keeps it from hitting the very edge */
 }
 
 .profile-circle img {
@@ -8851,114 +8936,65 @@ input, select, textarea {
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
-    opacity: 1 !important; /* Forces it to be visible */
-    visibility: visible !important;
 }
 
-.profile-circle {
-    /* ... your other code ... */
-    border: 4px solid #f4f1ea !important;
-    outline: 1px solid rgba(0,0,0,0.05); /* This adds a "whisper" of a line outside the cream border */
-}
 
-/* --- TIGHTEN PROJECT GALLERY SPACING --- */
-
-/* 1. Shrink the gap at the very top of the section */
-.inner {
-    padding: 2rem 0 1rem 0 !important; /* Shrunk top/bottom padding */
-    margin-bottom: 0 !important;
-}
-
-/* 2. Tighten the gap between the description text and the Filters header */
-.inner p {
-    margin-bottom: 0.5rem !important;
-}
-
-/* 3. Pull the Filters section up closer to the text above it */
-#filters {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 2rem !important; /* Space between filters and the actual images below */
-}
-
-/* 4. Shrink the "Filters" sub-header specifically */
-#filters h3 {
-    margin-bottom: 1rem !important;
-    font-size: 0.9rem !important; /* Smaller, cleaner look for a sub-label */
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-/* 5. Ensure the Filter Row itself doesn't have extra bottom margin */
-.filter-row {
-    margin-bottom: 0 !important;
-}
-/* --- THE COMPASS ICON --- */
-.compass-icon::before {
-    content: '🧭'; /* You can use an emoji or a FontAwesome icon here */
-    margin-right: 8px;
-    display: inline-block;
-    transition: transform 0.5s ease;
-}
-
-#find-direction:hover .compass-icon::before {
-    transform: rotate(45deg); /* Makes the compass "needle" move on hover */
-}
-
-/* --- STYLING THE TWO LEFT BUTTONS --- */
-.actions.stacked li {
-    margin-bottom: 1rem; /* Space between the two buttons */
-}
-
-/* Make the Contact button look slightly different (Optional) */
-.custom-contact-btn {
-    background-color: transparent !important;
-    box-shadow: inset 0 0 0 2px #f4f1ea !important; /* Soft Autumn Border */
-    color: #444 !important;
-}
-
-.custom-contact-btn:hover {
-    background-color: #f4f1ea !important;
-    color: #000 !important;
-}
-
-/* --- HORIZONTAL BUTTON ROW --- */
-
-.actions.hero-buttons {
+/* --- THE CONTENT AREA --- */
+#hero-reveal .content.sharp-edge {
     display: flex !important;
-    flex-direction: row !important; /* Forces side-by-side */
-    flex-wrap: nowrap; /* Allows them to stack if the screen gets REALLY tiny */
-    gap: .5rem; /* Space between the two buttons */
-    margin-top: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-	justify-content: flex-start;
+    flex-direction: column !important;
+    justify-content: center !important; 
+    align-items: flex-start !important; 
+    text-align: left !important;
+    padding: 2rem 8% !important; 
+    width: 50% !important;        
+    max-width: 50% !important;
 }
 
-.actions.hero-buttons li {
-    padding: 0 !important;
-    margin: 0 !important;
+
+/* --- HORIZONTAL BUTTON ROW (FLUID SETTING) --- */
+.hero-buttons-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; 
+    gap: 0.5rem !important;       
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: flex-start !important;
 }
 
-/* Adjust the button sizing so they look like a matching set */
-.actions.hero-buttons .button {
-    min-width: 100px;
-	flex: 1;
-	text-align: center;
-    padding: 0 0.75rem !important; /* Better horizontal 'breathing' room */
-	font-size: 0.9rem
+.hero-buttons-container .button {
+    display: inline-block !important;
+    flex: 1 1 auto !important;     
+    min-width: 100px !important;    
+    padding: 0 0.75rem !important;  
+    font-size: 0.8rem !important;   
+    white-space: nowrap !important; 
+    text-align: center;
 }
 
-/* --- MOBILE TWEAK --- */
-@media screen and (max-width: 480px) {
-    .actions.hero-buttons {
-        flex-direction: column !important; /* Stacks them only on small phones */
-        width: 100%;
-    }
-    .actions.hero-buttons .button {
+
+/* --- MOBILE OVERRIDES --- */
+@media screen and (max-width: 736px) {
+    #hero-reveal .content.sharp-edge {
+        padding: 4rem 10% !important;
         width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .hero-buttons-container {
+        flex-direction: column !important;
+    }
+    
+    .hero-buttons-container .button {
+        width: 100% !important;
+        padding: 0 1.25rem !important;
+        font-size: 0.85rem !important;
     }
 }
+
 /* --- SKILLS TOOLKIT SECTION --- */
 
 #skills-toolkit {
@@ -9039,3 +9075,97 @@ input, select, textarea {
     }
 }
 
+/* --- Strict 2x4 Grid Layout --- */
+.skills-grid {
+    display: grid;
+    /* Forces exactly 4 equal columns on desktop screens */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.skill-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-sizing: border-box;
+    min-height: 140px; 
+}
+
+/* FIX: Locks the icon wrapper into an absolute square/circle so it cannot turn into an oval */
+.skill-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important; 
+    flex-shrink: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* FIX: Allows normal text wrapping */
+.skill-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: normal;
+    display: block;
+    width: 100%;
+}
+
+/* Clickable interactions */
+.clickable-skill {
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.clickable-skill:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustment: Drops down to a 2-column or 1-column layout on smaller mobile screens so things don't get crushed */
+@media screen and (max-width: 840px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hide the tooltip by default */
+.skill-item {
+    position: relative;
+}
+
+/* The floating tooltip */
+#tooltip-box {
+    position: fixed; /* Fixes it to the screen */
+    background: rgba(50, 50, 50, 0.9);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    pointer-events: none; /* Crucial: lets the mouse pass through it */
+    z-index: 10000;
+    display: none; /* Hidden until needed */
+    white-space: nowrap;
+}
+
+/* ADD THIS BLOCK: This triggers the tooltip to appear on hover */
+.skill-item:hover::after {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
