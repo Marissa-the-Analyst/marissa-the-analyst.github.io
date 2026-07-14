@@ -121,17 +121,32 @@
     </div>
         <h1 class="portfolio-title">Marissa the Analyst Portfolio</h1>
         <p class="major">Translating complex operational data into the strategic maps that guide supply chain efficiency. Dedicated to uncovering the 'North Star' metrics that optimize logistics, reduce waste, and empower informed leadership through reporting excellence.</p>
-            <ul class="actions hero-buttons">
-                <li><a href="#first" id="view-projects-btn" class="button custom-contact-btn">View My Projects</a></li>
-                <li><a href="#bottom" class="button custom-contact-btn">Contact Info</a></li>
-                <li><a href="aboutme.html" class="button custom-contact-btn"> About Me</a></li>
-            </ul>
+                <div class="hero-buttons-container">
+                    <a href="#first" id="view-projects-btn" class="button custom-contact-btn">View My Projects</a>
+                    <a href="#bottom" class="button custom-contact-btn">Contact Info</a>
+                    <a href="aboutme.html" class="button custom-contact-btn">About Me</a>
+                </div>
     </div>
 
     <div class="image">
         <img src="images/banner.jpg" alt="Strategic Landscape" id="target-mountain" />
-        <div class="north-star" id="target-star"></div>
-
+            <div id="target-star-wrapper">
+                <div id="target-star"></div>
+                
+                <!-- Clear horizontal rectangle tooltip -->
+                <div class="star-tooltip minimal-style">
+                    <strong class="tooltip-header">✨ Insight Unlocked ✨</strong>
+                    
+                    <!-- Sentence 1 (Italicized Map Theory) -->
+                    <div class="highlight-quote">A map is only useful if you know how to read it.</div>
+                    
+                    <!-- Sentence 2 (Grounded Execution) -->
+                    <div class="main-text">I turn messy spreadsheets into the clear directions needed to move forward.</div>
+                    
+                    <!-- Closing Footer Sign-off -->
+                    <div class="tooltip-footer">Enjoy exploring!!</div>
+                </div>
+            </div>
         <div class="image-overlay-content">
             <h2 class="quote-text">DATA IS THE MAP;<br><span>INSIGHT IS THE COMPASS.</span></h2>
             <a href="#projects" id="find-direction" class="button custom-ghost">
@@ -140,64 +155,72 @@
     </div>
 
 </section>
-<!---Skills--->
-<section id="skills-toolkit" class="wrapper style1 fade-up">
-    <div class="inner">
-        <h2>Technical Toolkit</h2>
-        <p>A specialized blend of data science and supply chain operations.</p>
-        
-        <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                    <img src="images/excel-file.png" alt="Excel" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">Microsoft Excel</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                    <img src="images/python.png" alt="Python" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">Python</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                    <img src="images/wms.png" alt="WMS" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">Manhattan WMS/BlueZone</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                     <img src="images/mysql.png" alt="MySQL" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">MySQL</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                     <img src="images/data-visualization.png" alt="Data Visualization" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">Tableau/PowerBi</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                     <img src="images/stack-of-boxes.png" alt="Inventory Control" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">Inventory Control</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                     <img src="images/DC Workflows.png" alt="DC Workflows" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">DC Workflows</span>
-            </div>
-            <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                     <img src="images/data-cleaning.png" alt="Data Cleaning" style="width: 40px; height: 40px;" />
-                </div>
-                <span class="skill-label">Data Cleaning</span>
-            </div>
+
+<div class="skills-grid">
+    <!-- Microsoft Excel (Tool -> Excel) -->
+    <div class="skill-item clickable-skill" data-type="tool" data-value="Excel" data-skill-tooltip="Filter Excel projects 📊">
+        <div class="skill-icon-wrapper">
+            <img src="images/excel-file.png" alt="Excel" style="width: 40px; height: 40px;" />
         </div>
+        <span class="skill-label">Microsoft Excel</span>
     </div>
-</section>
+
+    <!-- Python (Tool -> Python) -->
+    <div class="skill-item clickable-skill" data-type="tool" data-value="Python" data-skill-tooltip="See Python solutions 🐍">
+        <div class="skill-icon-wrapper">
+            <img src="images/python.png" alt="Python" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">Python</span>
+    </div>
+
+    <!-- Manhattan WMS (No filter mapping) -->
+    <div class="skill-item" data-skill-tooltip="Power user: Expert in transaction diagnostics and system data integrity.">
+        <div class="skill-icon-wrapper">
+            <img src="images/wms.png" alt="WMS" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">Manhattan WMS/BlueZone</span>
+    </div>
+
+    <!-- MySQL (Tool -> MySQL) -->
+    <div class="skill-item clickable-skill" data-type="tool" data-value="MySQL" data-skill-tooltip="Query SQL projects 🔍">
+        <div class="skill-icon-wrapper">
+            <img src="images/mysql.png" alt="MySQL" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">MySQL</span>
+    </div>
+
+    <!-- Tableau/PowerBi (Discipline -> Full Cycle Analytics & Data Visualization) -->
+    <div class="skill-item clickable-skill" data-type="Discipline" data-value="Full Cycle Analytics, Data Visualization" data-skill-tooltip="Explore projects w/ data visualizations 📈">
+        <div class="skill-icon-wrapper">
+            <img src="images/data-visualization.png" alt="Data Visualization" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">Tableau/PowerBi</span>
+    </div>
+
+    <!-- Inventory Control (Category -> Supply Chain & Operations) -->
+    <div class="skill-item clickable-skill" data-type="category" data-value="Supply Chain & Operations" data-skill-tooltip="Browse operations projects 📦">
+        <div class="skill-icon-wrapper">
+            <img src="images/stack-of-boxes.png" alt="Inventory Control" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">Inventory Control</span>
+    </div>
+
+    <!-- DC Workflows (Category -> Supply Chain & Operations) -->
+    <div class="skill-item clickable-skill" data-type="category" data-value="Supply Chain & Operations" data-skill-tooltip="Browse operations projects 📦">
+        <div class="skill-icon-wrapper">
+            <img src="images/DC Workflows.png" alt="DC Workflows" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">DC Workflows</span>
+    </div>
+
+    <!-- Data Cleaning (Discipline -> Data Cleaning) -->
+    <div class="skill-item clickable-skill" data-type="Discipline" data-value="Data Cleaning" data-skill-tooltip="View dirty to clean data projects 🧼">
+        <div class="skill-icon-wrapper">
+            <img src="images/data-cleaning.png" alt="Data Cleaning" style="width: 40px; height: 40px;" />
+        </div>
+        <span class="skill-label">Data Cleaning</span>
+    </div>
+</div>
 
 
 				<!-- Two -->
@@ -778,6 +801,9 @@
 
 			</div>
 
+<!-- Tooltip container -->
+<div id="tooltip-box"></div>
+
 
 <!-- Scripts -->
 <script src="assets/js/jquery.min.js"></script>
@@ -876,6 +902,56 @@ document.getElementById('clearFilters').addEventListener('click', () => {
 </script>
 
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const skillItems = document.querySelectorAll(".clickable-skill");
+    const filtersContainer = document.getElementById("filters");
+
+    skillItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const filterType = item.getAttribute("data-type");
+            const filterValuesString = item.getAttribute("data-value");
+            
+            if (!filterType || !filterValuesString) return;
+
+            const targetValues = filterValuesString.split(",").map(val => val.trim());
+
+            // 1. Wipe out ALL checkboxes completely and strip the 'selected' highlight class
+            document.querySelectorAll('.dropdown-menu input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+                const label = cb.closest('label');
+                if (label) {
+                    label.classList.remove('selected'); // Clears out old highlights perfectly!
+                }
+            });
+
+            // 2. Select ONLY our targeted checkboxes and apply the 'selected' layout class
+            targetValues.forEach(val => {
+                const checkbox = filtersContainer.querySelector(`input[name='${filterType}'][value='${val}']`);
+                if (checkbox) {
+                    checkbox.checked = true;
+                    
+                    const label = checkbox.closest('label');
+                    if (label) {
+                        label.classList.add('selected'); // Turns the new choice sage green
+                    }
+                }
+            });
+
+            // 3. Smooth scroll down to your Filters header
+            if (filtersContainer) {
+                filtersContainer.scrollIntoView({ behavior: "smooth" });
+            }
+
+            // 4. Directly invoke your built-in filter function to instantly refresh the project layout
+            if (typeof filterProjects === "function") {
+                filterProjects();
+            }
+        });
+    });
+});
+</script>
+
+<script>
   // Dropdown toggle
   document.querySelectorAll('.dropdown-toggle').forEach(button => {
     button.addEventListener('click', () => {
@@ -932,6 +1008,27 @@ $(function() {
         e.preventDefault();
         $('#hero-reveal').addClass('is-clear');
         // No auto-scroll here, let them enjoy the star!
+    });
+});
+</script>
+
+<script>
+const tooltip = document.getElementById('tooltip-box');
+
+document.querySelectorAll('.skill-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        tooltip.textContent = item.getAttribute('data-skill-tooltip');
+        tooltip.style.display = 'block';
+    });
+
+    item.addEventListener('mousemove', (e) => {
+        // Offset by 15px so it doesn't cover the cursor
+        tooltip.style.left = (e.clientX + 15) + 'px';
+        tooltip.style.top = (e.clientY + 15) + 'px';
+    });
+
+    item.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
     });
 });
 </script>
